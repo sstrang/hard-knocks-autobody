@@ -60,7 +60,7 @@
   }
   .tagline{color:var(--muted);font-size:1.02rem;margin-top:.35rem}
   /* ---- layout ---- */
-  main{max-width:880px;margin:0 auto;padding:0 1rem 5.5rem}
+  main{max-width:880px;margin:0 auto;padding:0 1rem 2rem}
   section{margin:2.2rem 0}
   h2{
     font-family:Impact,'Arial Black',sans-serif;
@@ -148,21 +148,9 @@
   /* ---- footer ---- */
   footer{
     text-align:center;color:var(--muted);font-size:.85rem;
-    padding:2rem 1rem 6.5rem;border-top:1px solid var(--line);
+    padding:2rem 1rem 2.5rem;border-top:1px solid var(--line);
   }
   footer .skull-mini{font-size:1rem}
-  /* ---- sticky mobile call bar ---- */
-  .callbar{
-    position:fixed;left:0;right:0;bottom:0;z-index:50;display:none;
-    padding:.7rem .8rem calc(.6rem + env(safe-area-inset-bottom));
-    background:rgba(20,17,16,.94);backdrop-filter:blur(6px);
-    border-top:2px solid var(--flame);
-  }
-  .callbar .btn{width:100%;font-size:1.1rem;padding:1rem}
-  @media (max-width:640px){
-    .callbar{display:block}
-    footer{padding-bottom:7.5rem}
-  }
 </style>
 </head>
 <body>
@@ -240,10 +228,6 @@
 <footer>
   <span class="skull-mini">💀</span> Hard Knocks Autobody · 569 Route 105, Maugerville, NB · <a href="tel:+15064724611" style="color:var(--flame-hi);text-decoration:none">(506) 472-4611</a>
 </footer>
-
-<div class="callbar">
-  <a class="btn btn-primary" href="tel:+15064724611">📞 Call (506) 472-4611</a>
-</div>
 
 </body>
 </html>
