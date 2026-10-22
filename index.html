@@ -61,12 +61,36 @@
     font-size:1.35rem;
     display:flex;align-items:center;gap:.6rem;
     margin-bottom:1rem;
+    padding-bottom:.45rem;
+    border-bottom:2px solid;
+    border-image:linear-gradient(90deg,var(--ember),var(--flame) 40%,transparent) 1;
+    background:linear-gradient(90deg,var(--flame-hi),var(--flame) 70%,var(--ember));
+    -webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent;color:transparent;
   }
   h2 .flame-ico{flex:none;width:22px;height:22px}
   .card{
+    position:relative;
     background:var(--panel);
     border:2px solid var(--line);
     padding:1.25rem;
+  }
+  .card::before{
+    content:"";position:absolute;inset:5px;pointer-events:none;
+    background-image:
+      radial-gradient(circle,#8a7350 0 2px,#2c241a 2.6px,transparent 3.4px),
+      radial-gradient(circle,#8a7350 0 2px,#2c241a 2.6px,transparent 3.4px),
+      radial-gradient(circle,#8a7350 0 2px,#2c241a 2.6px,transparent 3.4px),
+      radial-gradient(circle,#8a7350 0 2px,#2c241a 2.6px,transparent 3.4px);
+    background-position:top left,top right,bottom left,bottom right;
+    background-repeat:no-repeat;
+    background-size:9px 9px;
+  }
+  /* ---- hazard stripe divider ---- */
+  .hazard{
+    height:10px;
+    background:repeating-linear-gradient(-45deg,#0d0b0a 0 14px,var(--flame) 14px 28px);
+    border-top:2px solid #000;border-bottom:2px solid #000;
   }
   /* ---- quick buttons ---- */
   .actions{display:grid;gap:.7rem;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
@@ -75,16 +99,17 @@
     padding:.9rem 1rem;
     font-weight:700;font-size:.95rem;text-decoration:none;
     text-transform:uppercase;letter-spacing:.05em;
-    border:2px solid var(--line);
     background:var(--panel-2);color:var(--text);
+    clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));
     transition:transform .08s ease,filter .12s ease;
   }
   .btn:active{transform:scale(.97)}
   .btn-primary{
     background:linear-gradient(180deg,var(--flame-hi),var(--flame) 60%,#e05a00);
-    border-color:#a34400;color:#1b0e02;
+    color:#1b0e02;
     text-shadow:0 1px 0 rgba(255,255,255,.25);
   }
+  .btn-primary:hover{filter:brightness(1.08) drop-shadow(0 0 9px rgba(255,122,24,.55))}
   /* ---- services ---- */
   .services{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:.6rem}
   .services li{
@@ -96,7 +121,7 @@
   .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.7rem}
   .shot{
     position:relative;aspect-ratio:1/1;overflow:hidden;
-    border:1px solid var(--line);
+    clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px);
     background:
       radial-gradient(80% 60% at 50% 110%, rgba(255,122,24,.18), transparent 70%),
       var(--panel-2);
@@ -127,9 +152,12 @@
   /* ---- sticky mobile call bar ---- */
   .callbar{
     position:fixed;left:0;right:0;bottom:0;z-index:50;display:none;
-    padding:.6rem .8rem calc(.6rem + env(safe-area-inset-bottom));
-    background:rgba(20,17,16,.92);backdrop-filter:blur(6px);
-    border-top:2px solid;border-image:linear-gradient(90deg,var(--ember),var(--flame),var(--flame-hi),var(--ember)) 1;
+    padding:.7rem .8rem calc(.6rem + env(safe-area-inset-bottom));
+    background:rgba(20,17,16,.94);backdrop-filter:blur(6px);
+  }
+  .callbar::before{
+    content:"";position:absolute;top:0;left:0;right:0;height:6px;
+    background:repeating-linear-gradient(-45deg,#0d0b0a 0 10px,var(--flame) 10px 20px);
   }
   .callbar .btn{width:100%;font-size:1.1rem;padding:1rem}
   @media (max-width:640px){
@@ -146,6 +174,8 @@
   <h1>Hard Knocks Autobody</h1>
   <p class="tagline">Collision, rust &amp; frame work. Done right, done fair.</p>
 </header>
+
+<div class="hazard"></div>
 
 <main>
 
@@ -209,6 +239,8 @@
   </section>
 
 </main>
+
+<div class="hazard"></div>
 
 <footer>
   <span class="skull-mini">💀</span> Hard Knocks Autobody · 569 Route 105, Maugerville, NB · <a href="tel:+15064724611" style="color:var(--flame-hi);text-decoration:none">(506) 472-4611</a>
