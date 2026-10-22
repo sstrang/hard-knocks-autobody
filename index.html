@@ -157,16 +157,21 @@
   footer .skull-mini{font-size:1rem}
   /* ---- photo lightbox ---- */
   #lightbox{
-    position:fixed;inset:0;z-index:100;display:none;
+    position:fixed;inset:0;z-index:100;display:flex;
     align-items:center;justify-content:center;
     background:rgba(10,8,7,.94);padding:1rem;
+    opacity:0;visibility:hidden;
+    transition:opacity .22s ease,visibility .22s ease;
   }
-  #lightbox.open{display:flex}
+  #lightbox.open{opacity:1;visibility:visible}
   #lightbox img{
     max-width:94vw;max-height:82vh;
     border:2px solid var(--flame);
     box-shadow:0 0 40px rgba(255,100,20,.25);
+    transform:scale(.94);
+    transition:transform .22s ease;
   }
+  #lightbox.open img{transform:scale(1)}
   #lightbox .close{
     position:absolute;top:.7rem;right:.9rem;
     width:54px;height:54px;
@@ -271,7 +276,7 @@
       lb.classList.add('open');
     });
   });
-  function close(){ lb.classList.remove('open'); lbImg.src = ''; }
+  function close(){ lb.classList.remove('open'); }
   lb.querySelector('.close').addEventListener('click', close);
   lb.addEventListener('click', function(e){ if(e.target === lb) close(); });
   document.addEventListener('keydown', function(e){ if(e.key === 'Escape') close(); });
