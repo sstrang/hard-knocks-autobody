@@ -31,6 +31,14 @@
   /* ---- header ---- */
   header{
     background:
+      radial-gradient(42% 50% at 50% 46%, rgba(0,0,0,.45), transparent 64%),
+      radial-gradient(30% 36% at 50% 46%, rgba(0,0,0,.40), transparent 70%),
+      radial-gradient(19% 23% at 46% 52%, rgba(0,0,0,.32), transparent 70%),
+      radial-gradient(16% 19% at 54% 40%, rgba(0,0,0,.28), transparent 70%),
+      radial-gradient(24% 30% at 20% 80%, rgba(0,0,0,.26), transparent 70%),
+      radial-gradient(20% 26% at 82% 66%, rgba(0,0,0,.24), transparent 70%),
+      radial-gradient(14% 16% at 24% 76%, rgba(255,80,10,.10), transparent 70%),
+      radial-gradient(12% 14% at 80% 62%, rgba(255,80,10,.09), transparent 70%),
       radial-gradient(120% 90% at 50% -20%, rgba(255,122,24,.22), transparent 60%),
       linear-gradient(180deg,#1a1512 0%, var(--bg) 100%);
     text-align:center;
@@ -85,12 +93,6 @@
     background-position:top left,top right,bottom left,bottom right;
     background-repeat:no-repeat;
     background-size:9px 9px;
-  }
-  /* ---- hazard stripe divider ---- */
-  .hazard{
-    height:10px;
-    background:repeating-linear-gradient(-45deg,#0d0b0a 0 14px,var(--flame) 14px 28px);
-    border-top:2px solid #000;border-bottom:2px solid #000;
   }
   /* ---- quick buttons ---- */
   .actions{display:grid;gap:.7rem;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
@@ -154,10 +156,7 @@
     position:fixed;left:0;right:0;bottom:0;z-index:50;display:none;
     padding:.7rem .8rem calc(.6rem + env(safe-area-inset-bottom));
     background:rgba(20,17,16,.94);backdrop-filter:blur(6px);
-  }
-  .callbar::before{
-    content:"";position:absolute;top:0;left:0;right:0;height:6px;
-    background:repeating-linear-gradient(-45deg,#0d0b0a 0 10px,var(--flame) 10px 20px);
+    border-top:2px solid var(--flame);
   }
   .callbar .btn{width:100%;font-size:1.1rem;padding:1rem}
   @media (max-width:640px){
@@ -174,8 +173,6 @@
   <h1>Hard Knocks Autobody</h1>
   <p class="tagline">Collision, rust &amp; frame work. Done right, done fair.</p>
 </header>
-
-<div class="hazard"></div>
 
 <main>
 
@@ -239,8 +236,6 @@
   </section>
 
 </main>
-
-<div class="hazard"></div>
 
 <footer>
   <span class="skull-mini">💀</span> Hard Knocks Autobody · 569 Route 105, Maugerville, NB · <a href="tel:+15064724611" style="color:var(--flame-hi);text-decoration:none">(506) 472-4611</a>
