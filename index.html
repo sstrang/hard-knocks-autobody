@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hard Knocks Autobody — Route 105, Maugerville NB</title>
+<meta name="description" content="Hard Knocks Autobody — collision, rust and frame repair at 569 Route 105, Maugerville NB. Call (506) 472-4611.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext x='16' y='24' font-size='24' text-anchor='middle'%3E%F0%9F%92%80%3C/text%3E%3C/svg%3E">
+<style>
+  :root{
+    --bg:#141110;
+    --panel:#1e1916;
+    --panel-2:#262019;
+    --line:#3a2f24;
+    --text:#f2ede4;
+    --muted:#b8ab99;
+    --flame:#ff7a18;
+    --flame-hi:#ffb700;
+    --ember:#d92b04;
+    --bone:#efe6d8;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.6;
+    -webkit-text-size-adjust:100%;
+  }
+  /* ---- header ---- */
+  header{
+    background:
+      radial-gradient(120% 90% at 50% -20%, rgba(255,122,24,.22), transparent 60%),
+      linear-gradient(180deg,#1a1512 0%, var(--bg) 100%);
+    text-align:center;
+    padding:2.2rem 1.2rem 1.6rem;
+    border-bottom:3px solid;
+    border-image:linear-gradient(90deg,transparent,var(--ember),var(--flame),var(--flame-hi),var(--ember),transparent) 1;
+  }
+  .logo-svg{width:96px;height:96px;filter:drop-shadow(0 4px 14px rgba(255,122,24,.35))}
+  h1{
+    font-family:Impact,'Arial Black','Franklin Gothic Bold',sans-serif;
+    font-size:clamp(2rem,8vw,3.2rem);
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    line-height:1.05;
+    margin-top:.5rem;
+    background:linear-gradient(180deg,var(--flame-hi),var(--flame) 55%,var(--ember));
+    -webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent;color:transparent;
+  }
+  .tagline{color:var(--muted);font-size:1.02rem;margin-top:.35rem}
+  /* ---- layout ---- */
+  main{max-width:880px;margin:0 auto;padding:0 1rem 5.5rem}
+  section{margin:2.2rem 0}
+  h2{
+    font-family:Impact,'Arial Black',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    font-size:1.35rem;
+    display:flex;align-items:center;gap:.6rem;
+    margin-bottom:1rem;
+  }
+  h2 .flame-ico{flex:none;width:22px;height:22px}
+  .card{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:1.25rem;
+  }
+  /* ---- quick buttons ---- */
+  .actions{display:grid;gap:.7rem;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+  .btn{
+    display:flex;align-items:center;justify-content:center;gap:.5rem;
+    padding:.9rem 1rem;border-radius:10px;
+    font-weight:700;font-size:1.02rem;text-decoration:none;
+    border:1px solid var(--line);
+    background:var(--panel-2);color:var(--text);
+    transition:transform .08s ease,filter .12s ease;
+  }
+  .btn:active{transform:scale(.97)}
+  .btn-primary{
+    background:linear-gradient(180deg,var(--flame-hi),var(--flame) 60%,#e05a00);
+    border-color:#a34400;color:#1b0e02;
+    text-shadow:0 1px 0 rgba(255,255,255,.25);
+  }
+  /* ---- services ---- */
+  .services{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:.6rem}
+  .services li{
+    background:var(--panel);border:1px solid var(--line);border-radius:10px;
+    padding:.7rem .9rem;display:flex;gap:.6rem;align-items:baseline;
+  }
+  .services li::before{content:"🔥";font-size:.9rem}
+  /* ---- photos ---- */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.7rem}
+  .shot{
+    position:relative;aspect-ratio:1/1;overflow:hidden;
+    border-radius:10px;border:1px solid var(--line);
+    background:
+      radial-gradient(80% 60% at 50% 110%, rgba(255,122,24,.18), transparent 70%),
+      var(--panel-2);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .shot img{width:100%;height:100%;object-fit:cover;display:block}
+  .shot.empty::after{
+    content:"Photo coming soon";
+    color:var(--muted);font-size:.8rem;text-align:center;padding:.5rem;
+  }
+  /* ---- hours & contact ---- */
+  .hours{width:100%;border-collapse:collapse}
+  .hours td{padding:.45rem .2rem;border-bottom:1px dashed var(--line);color:var(--text)}
+  .hours tr:last-child td{border-bottom:none}
+  .hours td:last-child{text-align:right;color:var(--muted)}
+  .hours .closed td:last-child{color:var(--ember)}
+  .contact-lines{display:grid;gap:.55rem}
+  .contact-lines a{color:var(--flame-hi);text-decoration:none;font-weight:600;word-break:break-word}
+  .contact-lines a:hover{text-decoration:underline}
+  .map{margin-top:1rem;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+  .map iframe{display:block;width:100%;height:260px;border:0}
+  /* ---- footer ---- */
+  footer{
+    text-align:center;color:var(--muted);font-size:.85rem;
+    padding:2rem 1rem 6.5rem;border-top:1px solid var(--line);
+  }
+  footer .skull-mini{font-size:1rem}
+  /* ---- sticky mobile call bar ---- */
+  .callbar{
+    position:fixed;left:0;right:0;bottom:0;z-index:50;display:none;
+    padding:.6rem .8rem calc(.6rem + env(safe-area-inset-bottom));
+    background:rgba(20,17,16,.92);backdrop-filter:blur(6px);
+    border-top:2px solid;border-image:linear-gradient(90deg,var(--ember),var(--flame),var(--flame-hi),var(--ember)) 1;
+  }
+  .callbar .btn{width:100%;font-size:1.1rem;padding:1rem}
+  @media (max-width:640px){
+    .callbar{display:block}
+    footer{padding-bottom:7.5rem}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <!-- Skull & flames mark -->
+  <svg class="logo-svg" viewBox="0 0 120 120" role="img" aria-label="Flaming skull logo">
+    <defs>
+      <linearGradient id="fg" x1="0" y1="1" x2="0" y2="0">
+        <stop offset="0" stop-color="#d92b04"/>
+        <stop offset=".55" stop-color="#ff7a18"/>
+        <stop offset="1" stop-color="#ffb700"/>
+      </linearGradient>
+    </defs>
+    <!-- flames -->
+    <g fill="url(#fg)">
+      <path d="M60 4c4 12-8 16-6 26 1.6 8 10 10 9 19-6-3-7-9-13-11 3 9-8 12-7 22-5-4-4-10-9-14-1 10-8 13-7 24 .8 9 8 14 15 17-20-4-30-16-28-31 2-13 12-16 11-27 5 2 7 7 7 12 6-8 2-16 6-24 4 7 3 13 8 18 2-11-3-19 14-31z"/>
+      <path d="M95 44c1 7-5 9-4 15 6 3 9 9 8 16-1 8-7 12-13 14 8 1 16-2 20-9 5-9 1-19-4-24 1 4 0 7-2 9-1-8 0-14-5-21z" opacity=".85"/>
+      <path d="M25 44c-5 7-4 13-5 21-2-2-3-5-2-9-5 5-9 15-4 24 4 7 12 10 20 9-6-2-12-6-13-14-1-7 2-13 8-16 1-6-5-8-4-15z" opacity=".85"/>
+    </g>
+    <!-- skull -->
+    <g>
+      <path fill="#efe6d8" d="M60 34c-17 0-27 11-27 26 0 9 4 15 9 19 3 2 4 5 4 8l1 5c.3 1.5 1.5 2.5 3 2.5h20c1.5 0 2.7-1 3-2.5l1-5c.3-3 1-6 4-8 5-4 9-10 9-19 0-15-10-26-27-26z"/>
+      <ellipse cx="48" cy="63" rx="7.5" ry="8.5" fill="#141110"/>
+      <ellipse cx="72" cy="63" rx="7.5" ry="8.5" fill="#141110"/>
+      <circle cx="50.5" cy="60.5" r="2" fill="#ff7a18"/>
+      <circle cx="74.5" cy="60.5" r="2" fill="#ff7a18"/>
+      <path fill="#141110" d="M60 70l-4.5 9c-.6 1.3.3 2.6 1.7 2.6h5.6c1.4 0 2.3-1.3 1.7-2.6z"/>
+      <path fill="#141110" d="M50 94h20v3.5c0 1.4-1.1 2.5-2.5 2.5h-15A2.5 2.5 0 0 1 50 97.5z"/>
+      <g stroke="#141110" stroke-width="1.6">
+        <line x1="56" y1="94" x2="56" y2="100"/>
+        <line x1="60" y1="94" x2="60" y2="100"/>
+        <line x1="64" y1="94" x2="64" y2="100"/>
+      </g>
+    </g>
+  </svg>
+  <h1>Hard Knocks Autobody</h1>
+  <p class="tagline">Collision, rust &amp; frame work — done right, done fair.</p>
+</header>
+
+<main>
+
+  <section>
+    <div class="actions">
+      <a class="btn btn-primary" href="tel:+15064724611">📞 Call (506) 472-4611</a>
+      <a class="btn" href="mailto:boycejody@yahoo.ca">✉️ Email us</a>
+      <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=569+Route+105%2C+Maugerville%2C+NB+E3A+8L5" target="_blank" rel="noopener">🧭 Get directions</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2><svg class="flame-ico" viewBox="0 0 24 24" fill="#ff7a18"><path d="M12 2c1 4-3 6-2 10 .5 2.4 2.6 3.4 2.4 5.6-1.6-1-2-2.6-3.6-3.2.8 2.4-2.2 3.4-1.8 6.1.3 2.3 2.4 3.5 5 3.5 3.9 0 6.5-2.6 6-6.3-.4-3-3-4-3.6-6.6-.8 1-1 2.2-.8 3.4-2-2.4.4-5.6-1.6-12.5z"/></svg> The Shop</h2>
+    <div class="card">
+      <p>Hard Knocks Autobody is a small owner-run shop on Route 105, just up the river from Fredericton. Straight talk, honest quotes, and work that stands up — from banged-up fenders to rusted-out rockers and frames. If it's rolled into the yard, we'll take a look and tell you plainly what it needs.</p>
+    </div>
+  </section>
+
+  <section id="services">
+    <h2><svg class="flame-ico" viewBox="0 0 24 24" fill="#ff7a18"><path d="M12 2c1 4-3 6-2 10 .5 2.4 2.6 3.4 2.4 5.6-1.6-1-2-2.6-3.6-3.2.8 2.4-2.2 3.4-1.8 6.1.3 2.3 2.4 3.5 5 3.5 3.9 0 6.5-2.6 6-6.3-.4-3-3-4-3.6-6.6-.8 1-1 2.2-.8 3.4-2-2.4.4-5.6-1.6-12.5z"/></svg> What We Do</h2>
+    <ul class="services">
+      <li>Collision &amp; crash repair</li>
+      <li>Rust &amp; hole repair</li>
+      <li>Frame straightening</li>
+      <li>Dents, fenders &amp; body work</li>
+      <li>Painting &amp; refinishing</li>
+      <li>Something else? Just ask</li>
+    </ul>
+  </section>
+
+  <section id="photos">
+    <h2><svg class="flame-ico" viewBox="0 0 24 24" fill="#ff7a18"><path d="M12 2c1 4-3 6-2 10 .5 2.4 2.6 3.4 2.4 5.6-1.6-1-2-2.6-3.6-3.2.8 2.4-2.2 3.4-1.8 6.1.3 2.3 2.4 3.5 5 3.5 3.9 0 6.5-2.6 6-6.3-.4-3-3-4-3.6-6.6-.8 1-1 2.2-.8 3.4-2-2.4.4-5.6-1.6-12.5z"/></svg> Recent Work</h2>
+    <!-- Drop photos into the photos/ folder using these names and they appear automatically.
+         Missing files fall back to a "photo coming soon" tile. -->
+    <div class="grid">
+      <figure class="shot"><img src="photos/1.jpg" alt="Repair work at Hard Knocks Autobody" loading="lazy" onerror="this.parentElement.classList.add('empty');this.remove()"></figure>
+      <figure class="shot"><img src="photos/2.jpg" alt="Repair work at Hard Knocks Autobody" loading="lazy" onerror="this.parentElement.classList.add('empty');this.remove()"></figure>
+      <figure class="shot"><img src="photos/3.jpg" alt="Repair work at Hard Knocks Autobody" loading="lazy" onerror="this.parentElement.classList.add('empty');this.remove()"></figure>
+      <figure class="shot"><img src="photos/4.jpg" alt="Repair work at Hard Knocks Autobody" loading="lazy" onerror="this.parentElement.classList.add('empty');this.remove()"></figure>
+      <figure class="shot"><img src="photos/5.jpg" alt="Repair work at Hard Knocks Autobody" loading="lazy" onerror="this.parentElement.classList.add('empty');this.remove()"></figure>
+      <figure class="shot"><img src="photos/6.jpg" alt="Repair work at Hard Knocks Autobody" loading="lazy" onerror="this.parentElement.classList.add('empty');this.remove()"></figure>
+    </div>
+  </section>
+
+  <section id="visit">
+    <h2><svg class="flame-ico" viewBox="0 0 24 24" fill="#ff7a18"><path d="M12 2c1 4-3 6-2 10 .5 2.4 2.6 3.4 2.4 5.6-1.6-1-2-2.6-3.6-3.2.8 2.4-2.2 3.4-1.8 6.1.3 2.3 2.4 3.5 5 3.5 3.9 0 6.5-2.6 6-6.3-.4-3-3-4-3.6-6.6-.8 1-1 2.2-.8 3.4-2-2.4.4-5.6-1.6-12.5z"/></svg> Hours &amp; Location</h2>
+    <div class="card">
+      <table class="hours">
+        <tr><td>Monday – Friday</td><td>8:00 AM – 5:00 PM</td></tr>
+        <tr class="closed"><td>Saturday – Sunday</td><td>Closed</td></tr>
+      </table>
+      <div class="contact-lines" style="margin-top:1rem">
+        <span>📍 <a href="https://www.google.com/maps/dir/?api=1&destination=569+Route+105%2C+Maugerville%2C+NB+E3A+8L5" target="_blank" rel="noopener">569 Route 105, Maugerville, NB&nbsp;E3A&nbsp;8L5</a></span>
+        <span>📞 <a href="tel:+15064724611">(506) 472-4611</a></span>
+        <span>✉️ <a href="mailto:boycejody@yahoo.ca">boycejody@yahoo.ca</a></span>
+      </div>
+      <div class="map">
+        <iframe title="Map to Hard Knocks Autobody" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Hard+Knocks+Autobody,+569+Route+105,+Maugerville,+NB+E3A+8L5&output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span class="skull-mini">💀</span> Hard Knocks Autobody · 569 Route 105, Maugerville, NB · <a href="tel:+15064724611" style="color:var(--flame-hi);text-decoration:none">(506) 472-4611</a>
+</footer>
+
+<div class="callbar">
+  <a class="btn btn-primary" href="tel:+15064724611">📞 Call (506) 472-4611</a>
+</div>
+
+</body>
+</html>
